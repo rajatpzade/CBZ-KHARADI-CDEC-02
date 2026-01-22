@@ -268,3 +268,136 @@ Always exit Insert mode to return to Normal mode.
 - Start with simple files; build up to complex editing.
 
 Remember, Vim has a learning curve, but it's rewarding for productivity!
+
+
+#  Editors in Linux
+
+Editors are used to create new files, and edit or modify the content inside it. Simply editors 
+are used to read and write data in existing or newly created file. Editors can be classified on the basis 
+of interfaces that they use, i.e. Graphical Editors and Command Line Editors.
+
+### Graphical Editors
+
+Graphical editors use graphical user interfaces. They are easy to use but consume more memory 
+than command line editors. In Linux, following are some well-known graphical editors:
+
+1. **gedit**: It is similar to Notepad in Windows. You can open gedit graphically in the application 
+menu and also using the command `$ gedit`.
+2. **kedit**: It is similar to gedit but contains some advanced features. Generally, you have to install 
+kedit separately to use it.
+3. **Open Office**: Open Office is similar to MS Office. This Open Office is specially developed 
+for Linux-based operating systems.
+
+### Command Line Editors
+
+Command line editors use command line interfaces. These editors are much more efficient and 
+consume less memory than graphical editors. Following are some well-known command line 
+editors:
+
+1. **nano**: The nano editor is easy to use since it provides simple features to edit data from files.
+   - Syntax: `# nano <filename>.<extension>`
+2. **pico**: 
+   - Syntax: `# pico <filename>`
+3. **vi and vim**: vi (virtual interface) and vim (virtual interface modified) are most commonly used 
+editors. vi and vim are the same, whereas vim is the advanced version of the vi editor. 
+Thus, it contains some additional features. These editors work in four different modes:
+   - Insert mode
+   - Ex-mode 
+   - Command mode
+   - Visual mode
+   
+   Syntax: `# vim <filename>`
+   
+   **Command Mode**: This is the default mode. Press `Esc` to exit from any mode and 
+   enter into command mode.
+   
+   | Command | Description |
+   |---------|-------------|
+   | `dd` | Delete current line |
+   | `<n>dd` | Delete n no. of lines from current line |
+   | `dw` | Delete current word |
+   | `<n>dw` | Delete n no. of words from current word |
+   | `yy` | Copy current line |
+   | `<n>yy` | Copy n no. of lines from current line |
+   | `yw` | Copy current word |
+   | `<n>yw` | Copy n no. of words from current word |
+   | `cc` | Cut current line and enter in insert mode |
+   | `<n>cc` | Cut n no. of lines and enter in insert mode |
+   | `cw` | Cut current word and enter in insert mode |
+   | `<n>cw` | Cut n no. of words from current word and enter in insert mode |
+   | `p` | Paste |
+   | `s` | Remove current character and enter in insert mode |
+   | `S` | Remove current line and enter in insert mode |
+   | `u` | Undo |
+   | `Ctrl+r` | Redo |
+   | `H` | Move cursor to the top of screen |
+   | `M` | Move cursor to the middle of screen |
+   | `L` | Move cursor to the bottom of screen |
+   | `G` | Move cursor at the end of file |
+   | `gg` | Move cursor at the beginning |
+   | `<n>gg` | Move cursor at nth line |
+   | `/<word>` | Search particular word/string/character |
+   | `n` | Show next search result |
+   | `N` | Show previous search result |
+
+## Mastering Text Editing with VIM
+
+### Basic Concepts: Modes in Vim
+
+Vim works in different "modes," each for a specific purpose. This is the key to Vim's power. You switch between modes using keys.
+
+#### 1. **Normal Mode (Command Mode)**
+   - **Purpose:** Navigate, manipulate text, and run commands.
+   - **Default Mode:** Vim opens here.
+   - **Indicator:** No special message; cursor is a block.
+   - **Common Actions:** Moving around, deleting text, copying/pasting.
+
+#### 2. **Insert Mode**
+   - **Purpose:** Type and edit text like a regular editor.
+   - **How to Enter:** Press `i`, `a`, `o`, etc. (explained later).
+   - **Indicator:** Cursor becomes thin; "-- INSERT --" appears at the bottom.
+   - **Common Actions:** Typing text, basic editing.
+   
+   **Commands to Enter Insert Mode:**
+   - `i` — Insert text at current cursor position
+   - `I` — Insert text at start of the current line
+   - `a` — Insert text just right of the current character
+   - `A` — Insert text at end of the current line
+   - `o` — Insert new line below the current line
+   - `O` — Insert new line above the current line
+   - `r` — Replace single character
+   - `R` — Replace multiple characters
+
+#### 3. **Visual Mode**
+   - **Purpose:** Select text for operations (like highlighting).
+   - **How to Enter:** Press `v` (character), `V` (line), or `Ctrl+v` (block).
+   - **Indicator:** Selected text is highlighted; "-- VISUAL --" at bottom.
+   - **Common Actions:** Select and operate on blocks of text.
+   
+   **Visual Mode Selection:**
+   - `v` — Select character by character
+   - `V` — Select line by line
+   - `Ctrl+v` — Select block
+   - After selection: `y` (copy), `d` (delete), `c` (cut) for the selected area
+
+#### 4. **Command-Line Mode (Execute Mode or Ex-mode)**
+   - **Purpose:** Run advanced commands, save files, quit, etc.
+   - **How to Enter:** Press `:` in Normal mode.
+   - **Indicator:** `:` appears at bottom with cursor.
+   - **Common Actions:** `:w` (save), `:q` (quit), `:wq` (save and quit).
+   
+   **Ex-mode Commands:**
+   - `:q` — Quit without saving
+   - `:q!` — Quit without saving forcefully
+   - `:w` — Save and stay in file
+   - `:wq` or `:x` — Save and quit
+   - `:wq!` — Save and quit forcefully
+   - `:set nu` — Set line numbers
+   - `:<n>` — Jump to nth line
+   - `:set nonu` — Remove line numbers
+   - `:/<word>` — Highlight word/string/character
+   - `:nohl` — Remove highlight
+   - `:%s/<old>/<new>/g` — Find and replace old word with new word globally
+   - `:!<command>` — Execute any command on terminal without leaving editor
+
+**Key Tip:** Always go back to Normal mode (press `Esc`) before switching to another mode. This is how Vim stays efficient!
